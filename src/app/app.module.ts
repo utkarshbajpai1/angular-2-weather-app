@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { WeatherItemComponent } from './weather-item/weather-item.component';
+import { WeatherListComponent } from './weather-list/weather-list.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WeatherItemComponent,
+    WeatherListComponent
   ],
   imports: [
     BrowserModule
