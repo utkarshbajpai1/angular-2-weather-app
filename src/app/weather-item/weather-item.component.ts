@@ -5,7 +5,7 @@ import { WeatherItem } from '../weather-item';
   selector: 'app-weather-item',
   templateUrl: './weather-item.component.html',
   styleUrls: ['./weather-item.component.css'],
-  inputs : ['weatherItem']
+  inputs : ['weatherItem:item']
 })
 export class WeatherItemComponent implements OnInit {
 	weatherItem: WeatherItem;
