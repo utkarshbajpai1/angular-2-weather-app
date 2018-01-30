@@ -1,0 +1,8 @@
+<section class = "weather-search">
+	<form (ngSubmit) = "onSubmit()" f="ngForm">
+		<label for="city">City</label>
+		<input  [(ngModel)] = "location" type="text" id="city" required>
+		<button type="submit">Add City</button>
+	</form>
+	<div><span class="info">City found:</span> City Name</div>
+</section>
