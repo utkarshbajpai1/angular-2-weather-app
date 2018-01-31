@@ -9,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeatherSearchComponent implements OnInit {
 	
+	onSubmit(form){
+		console.log(form);
+	}	
   constructor() { }
 
   ngOnInit() {
