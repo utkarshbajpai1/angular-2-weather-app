@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { WeatherItem } from '../weather-item';
+import { WeatherItems } from '../weather-data';
+import { WeatherService } from '../weather.service';
 
 
 
@@ -9,10 +12,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeatherSearchComponent implements OnInit {
 	
-	onSubmit(form){
-		console.log(form);
-	}	
-  constructor() { }
+		
+  constructor(private _weatherservice: WeatherService) { }
+
+  onSubmit(form: any){
+		this._weatherservice.searchWeatherData(form.value.name)
+		.subscribe(
+			data => {
+				const weatherItem = new WeatherItem(data.name, data.weather[0].description, data.main.temp);
+				this._weatherservice.addWeatherItem(weatherItem);			
+			}
+		)
+  }
 
   ngOnInit() {
   }

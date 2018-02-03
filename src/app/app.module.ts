@@ -8,11 +8,7 @@ import { WeatherListComponent } from './weather-list/weather-list.component';
 import { WeatherService } from './weather.service';
 import { WeatherSearchComponent } from './weather-search/weather-search.component';
 import {HttpClientModule} from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import { Subject }    from 'rxjs/Subject';
-import { of }         from 'rxjs/observable/of';
 import { HttpClient } from '@angular/common/http';
-import { HttpHandler } from '@angular/common/http';
 
 
 
@@ -25,9 +21,10 @@ import { HttpHandler } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-     FormsModule
+     FormsModule,
+     HttpClientModule
   ],
-  providers: [WeatherService, HttpClientModule, HttpClient, HttpHandler],
+  providers: [WeatherService, HttpClientModule, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
